@@ -4,16 +4,14 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 import { OrmConfig } from "ormconfig";
 
 @Module({
-    imports: [
-      TypeOrmModule.forRootAsync({
-        imports: [ConfigModule],
-        inject: [ConfigService],
-        useFactory: (configService: ConfigService) => ({
-
-    ...OrmConfig(configService)
-        }),
-        
+  imports: [
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: () => ({
+        ...OrmConfig,
       }),
-    ],
-  })
-  export class DatabaseModule {}
+    }),
+  ],
+})
+export class DatabaseModule {}

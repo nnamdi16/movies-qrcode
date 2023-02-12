@@ -10,7 +10,7 @@ export default class CreateMovies implements Seeder {
         .createQueryBuilder()
         .insert()
         .into(Movies)
-        .values(data)
+        // .values(data)
         .execute()
     }
   }

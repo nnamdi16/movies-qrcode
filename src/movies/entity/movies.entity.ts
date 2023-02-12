@@ -1,13 +1,12 @@
 
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity()
+@Entity({name:"movies", synchronize:true})
 export class Movies {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
-    title: string;
+    @Column({nullable: true, default: null })    title: string;
 
     @Column()
     year: string;
@@ -64,7 +63,7 @@ export class Movies {
 
     @Column()
     response: string;
-    @Column()
+    @Column("text", { array: true })
     images: string[];
 
 }
