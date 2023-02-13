@@ -41,6 +41,12 @@ $ npm run start
 # watch mode
 $ npm run start:dev
 
+# Create migration file
+$ npm run typeorm:generate-migration
+
+# Seed data to the db
+$ npm run typeorm:run-migrations
+
 # production mode
 $ npm run start:prod
 ```
